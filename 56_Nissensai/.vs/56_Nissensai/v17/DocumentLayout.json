@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sizuc\\Unity_Game\\56_Nissensai\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3AC7CB-61C8-A67D-53DF-D46EB55AD23E}|Assembly-CSharp.csproj|c:\\users\\sizuc\\unity_game\\56_nissensai\\assets\\unitychan\\scripts\\autoblinkforsd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A3AC7CB-61C8-A67D-53DF-D46EB55AD23E}|Assembly-CSharp.csproj|solutionrelative:assets\\unitychan\\scripts\\autoblinkforsd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AutoBlinkforSD.cs",
+              "DocumentMoniker": "C:\\Users\\sizuc\\Unity_Game\\56_Nissensai\\Assets\\UnityChan\\Scripts\\AutoBlinkforSD.cs",
+              "RelativeDocumentMoniker": "Assets\\UnityChan\\Scripts\\AutoBlinkforSD.cs",
+              "ToolTip": "C:\\Users\\sizuc\\Unity_Game\\56_Nissensai\\Assets\\UnityChan\\Scripts\\AutoBlinkforSD.cs",
+              "RelativeToolTip": "Assets\\UnityChan\\Scripts\\AutoBlinkforSD.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T12:52:02.493Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
