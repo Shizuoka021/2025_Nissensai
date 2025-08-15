@@ -8,13 +8,11 @@ public class PlayerAnimation : MonoBehaviour
     private struct AnimName
     {
         public string run;
-        public string lift;
         public string pullUp;
 
-        public AnimName(string run, string lift, string pullup)
+        public AnimName(string run, string pullup)
         {
             this.run = run;
-            this.lift = lift;
             this.pullUp = pullup;
         }
     }
@@ -25,7 +23,7 @@ public class PlayerAnimation : MonoBehaviour
     void Start()
     {
         anim = this.GetComponent<Animator>();
-        animName = new AnimName("run", "lift", "pullup");
+        animName = new AnimName("run", "pullup");
     }
 
     //Run‚ÌAnimation‚ğÄ¶
@@ -38,18 +36,6 @@ public class PlayerAnimation : MonoBehaviour
     public void StopRunAnim()
     {
         anim.SetBool(animName.run, false);
-    }
-
-    //Lift‚ÌAnimationÄ¶
-    public void PlayLiftAnim()
-    {
-        anim.SetBool(animName.lift, true);
-    }
-
-    //Lift‚ÌAnimation‚ğ~‚ß‚é
-    public void StopLiftAnim()
-    {
-        anim.SetBool(animName.lift, false);
     }
 
     //PullUp‚ÌAnimation‚ğÄ¶

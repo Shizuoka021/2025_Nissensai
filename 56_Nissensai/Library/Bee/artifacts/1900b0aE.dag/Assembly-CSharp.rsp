@@ -360,6 +360,7 @@
 "Assets/UnityChan/Scripts/IKCtrlRightHand.cs"
 "Assets/UnityChan/Scripts/IKLookAt.cs"
 "Assets/UnityChan/Scripts/PlayerAnimation.cs"
+"Assets/UnityChan/Scripts/PlayerLottery.cs"
 "Assets/UnityChan/Scripts/PlayerMove.cs"
 "Assets/UnityChan/Scripts/PlayerRotation.cs"
 "Assets/UnityChan/Scripts/RandomWind.cs"
