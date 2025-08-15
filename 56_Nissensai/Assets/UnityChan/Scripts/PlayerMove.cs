@@ -7,22 +7,31 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody rb;
     private PlayerRotation playerRotation;
     private bool canMove = true; // 移動可能フラグ
+    private Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerRotation = GetComponent<PlayerRotation>();
+        animator = GetComponent<Animator>(); // Animator取得
     }
 
     void Update()
     {
-        if (!canMove) return;
+        if (!canMove)
+        {
+            animator.SetBool("isMoving", false); // 停止状態を送信
+            return;
+        }
 
         float lsh = Input.GetAxis("L_Stick_H");
         float lsv = Input.GetAxis("L_Stick_V");
         moveDirection = new Vector3(lsh, 0, lsv);
 
-        if (moveDirection.magnitude > 0.1f)
+        bool moving = moveDirection.magnitude > 0.1f;
+        animator.SetBool("isMoving", moving); // 移動状態を送信
+
+        if (moving)
         {
             playerRotation?.RotatePlayer(moveDirection);
         }
@@ -50,6 +59,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             SetCanMove(false);
+            animator.SetBool("isMoving", false);
             Debug.Log("Wallに接触 → 停止");
         }
     }
