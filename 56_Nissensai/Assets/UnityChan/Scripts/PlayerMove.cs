@@ -64,23 +64,4 @@ public class PlayerMove : MonoBehaviour
         canMove = value;
         if (!value) moveDirection = Vector3.zero;
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            SetCanMove(false);
-            animator.SetBool("isMoving", false);
-            Debug.Log("Wallに接触 → 停止");
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            SetCanMove(true);
-            Debug.Log("Wallから離れた → 移動可能");
-        }
-    }
 }
