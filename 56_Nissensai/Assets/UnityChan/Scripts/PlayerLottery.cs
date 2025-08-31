@@ -20,7 +20,9 @@ public class PlayerLottery : MonoBehaviour
     void Update()
     {
         // Lottery接触中かつBボタンでくじ引き、かつくじ引き中ではない
-        if (isNearLottery && !isLotteryRunning && Input.GetButtonDown("B_Button") && lotteryCount < 2)
+        if (isNearLottery && !isLotteryRunning &&
+          (Input.GetButtonDown("B_Button") || Input.GetKeyDown(KeyCode.Z))
+          && lotteryCount < 2)
         {
             StartCoroutine(LotteryRoutine());
         }
@@ -49,9 +51,9 @@ public class PlayerLottery : MonoBehaviour
         animator.SetBool("isLotteryRunning", false); // ★ アニメータに送信
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Lottery"))
+        if (other.CompareTag("Lottery"))
         {
             if (ignoreCollision) return;
 
@@ -61,9 +63,9 @@ public class PlayerLottery : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject.CompareTag("Lottery"))
+        if (other.CompareTag("Lottery"))
         {
             isNearLottery = false;
             Debug.Log("Lotteryから離れた");
