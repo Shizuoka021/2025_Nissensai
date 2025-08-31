@@ -61,7 +61,7 @@ public class NewBehaviourScript : MonoBehaviour
             }
             else
             {
-                myPhoto.sprite = silver;
+                myPhoto.sprite = sanka;
                 myPhoto.enabled = true;
             }
 
