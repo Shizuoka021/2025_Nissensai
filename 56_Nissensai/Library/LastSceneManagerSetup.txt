@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/GameArea.unity
+- path: Assets/Scenes/KuziScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
