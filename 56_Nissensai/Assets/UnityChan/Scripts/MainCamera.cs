@@ -1,31 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class MainCamera : MonoBehaviour
 {
+    [SerializeField] private Transform player; // Inspectorで指定できるようにする
+    private Vector3 offset;                   // プレイヤーとの相対距離
 
-    private GameObject player;   //プレイヤー情報格納用
-    private Vector3 offset;      //相対距離取得用
-
-    // Use this for initialization
     void Start()
     {
+        if (player == null)
+        {
+            // Playerが未指定なら名前で探す（保険）
+            GameObject obj = GameObject.Find("Player");
+            if (obj != null)
+                player = obj.transform;
+        }
 
-        //unitychanの情報を取得
-        this.player = GameObject.Find("Player");
-
-        // MainCamera(自分自身)とplayerとの相対距離を求める
-        offset = transform.position - player.transform.position;
-
+        if (player != null)
+        {
+            // 初期の相対距離を記録
+            offset = transform.position - player.position;
+        }
+        else
+        {
+            Debug.LogError("Playerが見つかりません。Inspectorで設定してください。");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate() // UpdateよりLateUpdateの方が追従カメラに向いている
     {
-
-        //新しいトランスフォームの値を代入する
-        transform.position = player.transform.position + offset;
-
+        if (player != null)
+        {
+            // プレイヤー位置にオフセットを足してカメラ位置を更新
+            transform.position = player.position + offset;
+        }
     }
 }
